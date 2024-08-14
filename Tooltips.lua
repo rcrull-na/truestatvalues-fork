@@ -9,11 +9,6 @@ end
 
 local statLabelMap = {
     [CR_MASTERY] = function()
-        local playerName = UnitName("player")
-        if string.find(string.lower(playerName), "grom") then
-            return nil
-        end
-
         local primaryTalentTree = GetSpecialization();
         if (primaryTalentTree) then
             local masterySpell, masterySpell2 = GetSpecializationMasterySpells(primaryTalentTree);
@@ -25,27 +20,12 @@ local statLabelMap = {
         return nil;
     end,
     [CR_CRIT_SPELL] = function()
-        local playerName = UnitName("player")
-        if string.find(string.lower(playerName), "grom") then
-            return nil
-        end
-
         return format(PAPERDOLLFRAME_TOOLTIP_FORMAT, STAT_CRITICAL_STRIKE)
     end,
     [CR_VERSATILITY_DAMAGE_DONE] = function()
-        local playerName = UnitName("player")
-        if string.find(string.lower(playerName), "grom") then
-            return nil
-        end
-
         return format(PAPERDOLLFRAME_TOOLTIP_FORMAT, STAT_VERSATILITY)
     end,
     [CR_HASTE_SPELL] = function()
-        local playerName = UnitName("player")
-        if string.find(string.lower(playerName), "grom") then
-            return nil
-        end
-        
         return format(PAPERDOLLFRAME_TOOLTIP_FORMAT, STAT_HASTE)
     end
 }
